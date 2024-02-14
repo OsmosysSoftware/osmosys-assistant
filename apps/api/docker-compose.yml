@@ -1,0 +1,14 @@
+version: '3'
+services:
+  osmosys-assistant-api:
+    container_name: osmosys-assistant-api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '127.0.0.1:${SERVER_PORT}:${SERVER_PORT}'
+    environment:
+      NODE_ENV: production
+
+volumes:
+  osmosys-assistant-db: ~

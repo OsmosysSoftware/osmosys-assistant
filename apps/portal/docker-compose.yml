@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  assistant-portal:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: assistant-portal
+    ports:
+      - '127.0.0.1:${SERVER_PORT}:80'
