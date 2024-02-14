@@ -1,0 +1,1 @@
+# osmosys-assistant
