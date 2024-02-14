@@ -8,10 +8,9 @@ describe('AssistantChatComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [AssistantChatComponent]
-    })
-    .compileComponents();
-    
+      declarations: [AssistantChatComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(AssistantChatComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
