@@ -99,14 +99,14 @@ export class ChatWindowComponent implements OnInit, AfterViewInit, OnChanges {
   submitQuery() {
     if (this.assistant) {
       this.messageloading = true;
-      const queryClone = this.userQuery;
+      const queryClone = this.userQuery.toString();
       this.userQuery = 'Fetching Results. Please wait.';
       const threadString = localStorage.getItem('threads') || '{}';
       const threads = JSON.parse(threadString);
       // eslint-disable-next-line dot-notation, prefer-destructuring
       const assistantId = this.assistant['assistantId'];
       const threadId = threads[assistantId];
-      this.openAIService.sendMessage(assistantId, this.userQuery, threadId).subscribe({
+      this.openAIService.sendMessage(assistantId, queryClone, threadId).subscribe({
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         next: (resp: any) => {
           if (resp.status === 'fail') {
@@ -140,6 +140,7 @@ export class ChatWindowComponent implements OnInit, AfterViewInit, OnChanges {
             detail: error?.error?.data || error?.message || 'Unknown Error',
           });
           this.messageloading = false;
+          this.userQuery = queryClone;
         },
       });
     }
