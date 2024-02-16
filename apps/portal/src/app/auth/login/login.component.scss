@@ -1,0 +1,65 @@
+/* login.component.css */
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 5%;
+}
+
+.card {
+  border-radius: 20px;
+  backdrop-filter: blur(5px);
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 2rem;
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2);
+  width: 350px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-900 {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.text-600 {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+input[pInputText],
+p-password input {
+  border: 1px solid #aaa;
+  padding: 1rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+button[pButton] {
+  background-color: #0096ff;
+  color: white;
+  padding: 1rem;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  transition:
+    background-color 0.2s,
+    box-shadow 0.2s;
+}
+
+button[pButton]:hover {
+  background-color: #007bff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+button[pButton]:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.p-error {
+  color: #ff6161;
+}

@@ -1,0 +1,62 @@
+<div *ngIf="!assistant">
+  <h2 class="text-center text-white">Please select an assistant</h2>
+</div>
+<div id="container" class="flex bg-black-alpha-20 align-items-center justify-content-center">
+  <div id="chat-box" class="card p-3 h-screen">
+    <ng-container *ngIf="!loading">
+      <div id="conversation-history" #scrollContainer>
+        <div *ngFor="let chat of conversation" class="card mb-1">
+          <div class="flex flex-row">
+            <div class="icon mr-1">
+              <i
+                class="border-circle p-1 pi"
+                [ngClass]="{
+                  'pi-discord': chat.role === 'assistant',
+                  'pi-user': chat.role !== 'assistant'
+                }"
+                style="font-size: 1.5rem; color: #fff"
+              ></i>
+            </div>
+            <div class="chat-body">
+              <div class="chat-user font-bold text-white">
+                <span>{{ chat.role | titlecase }}</span>
+              </div>
+              <div class="chat-content">
+                <div *ngFor="let content of chat.content">
+                  <markdown clipboard [data]="content.text.value" class="text-white"></markdown>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="chat-input" class="chat-input-container">
+        <textarea
+          class="chat-textarea w-full border-round-xl p-3"
+          [rows]="1"
+          pInputTextarea
+          [autoResize]="true"
+          placeholder="How can I help you today?"
+          [(ngModel)]="userQuery"
+        ></textarea>
+
+        <p-button
+          class="btn-toggle position-right"
+          icon="pi pi-arrow-up"
+          pTooltip="Send Message"
+          [loading]="messageloading"
+          [disabled]="userQuery.length === 0"
+          (click)="submitQuery()"
+        ></p-button>
+      </div>
+    </ng-container>
+    <div *ngIf="loading" class="card justify-content-center sticky top-50">
+      <div class="text-center">
+        <p-progressSpinner class="loading-spinner" ariaLabel="loading"></p-progressSpinner>
+      </div>
+      <div class="text-white text-center">
+        <h2>Found existing thread. Fetching previous messages.....</h2>
+      </div>
+    </div>
+  </div>
+</div>

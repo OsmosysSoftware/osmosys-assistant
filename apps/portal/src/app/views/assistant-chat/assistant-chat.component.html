@@ -1,1 +1,20 @@
-<p>assistant-chat works!</p>
+<div class="grid h-screen">
+  <div [hidden]="isSidebarCollapsed" class="col-fixed w-16rem surface-0">
+    <app-assistant-list (assistantSelected)="onAssistantSelected($event)"></app-assistant-list>
+  </div>
+  <div class="col surface-50">
+    <p-button
+      *ngIf="!isMobile"
+      class="btn-toggle position-center-left"
+      [icon]="isSidebarCollapsed ? 'pi pi-arrow-right' : 'pi pi-arrow-left'"
+      (click)="toggleSidebar()"
+    ></p-button>
+    <p-button
+      *ngIf="isMobile"
+      class="btn-toggle position-top-left"
+      [icon]="isSidebarCollapsed ? 'pi pi-bars' : 'pi pi-times'"
+      (click)="toggleSidebar()"
+    ></p-button>
+    <app-chat-window [assistant]="selectedAssistant"></app-chat-window>
+  </div>
+</div>

@@ -1,0 +1,90 @@
+#container {
+  overflow-y: hidden;
+}
+#chat-box {
+  max-width: 50rem;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+#chat-window {
+  height: 100vh;
+  overflow-y: auto;
+}
+
+#conversation-history {
+  height: 90vh;
+  overflow-y: auto;
+}
+
+#chat-input {
+  position: sticky;
+  overflow-y: auto;
+  bottom: 1vh;
+}
+
+.markdown-clipboard-button {
+  background-color: #f0f0f0; /* Light grey background for neutrality */
+  color: #333; /* Dark text for contrast */
+  border: 1px solid #ccc; /* Subtle border */
+  padding: 8px 12px; /* Adequate padding for clickable area */
+  border-radius: 4px; /* Rounded corners for a modern look */
+  cursor: pointer; /* Cursor indicates the button is clickable */
+  transition:
+    background-color 0.2s,
+    color 0.2s; /* Smooth transition for hover effect */
+  font-size: 16px; /* Adequate font size for readability */
+  display: inline-flex; /* Aligns icon and text inline */
+  align-items: center; /* Centers items vertically */
+  justify-content: center; /* Centers items horizontally for icons without text */
+}
+
+.markdown-clipboard-button:hover {
+  background-color: #e2e2e2; /* Slightly darker background on hover */
+  border-color: #b3b3b3; /* Slightly darker border on hover */
+}
+
+.markdown-clipboard-button:active {
+  background-color: #d0d0d0; /* Even darker background to simulate click */
+  border-color: #a6a6a6; /* Slightly darker border to simulate click */
+}
+
+.markdown-clipboard-button:focus {
+  outline: none; /* Removes default focus outline */
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25); /* Custom focus indicator */
+}
+
+.submit-query .p-button {
+  background: #fff !important;
+  color: #000 !important;
+  outline: transparent !important;
+  border: transparent !important;
+}
+.position-right {
+  position: absolute;
+  bottom: 7%;
+  right: 3%;
+}
+.chat-input-container {
+  position: relative;
+  width: 100%;
+}
+
+.chat-textarea {
+  padding-right: 50px;
+}
+
+.btn-toggle.position-right {
+  position: absolute;
+  bottom: 10px; /* Adjust based on the height of your textarea */
+  right: 10px; /* Adjust for padding and alignment */
+  border: none;
+}
+
+#conversation-history .pi-discord {
+  background-color: #c347e9;
+}
+#conversation-history .pi-user {
+  background-color: #70e665;
+}

@@ -1,6 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'primeng/resources/primeng.css';
-@import 'primeng/resources/themes/lara-light-blue/theme.css';
+@import 'primeng/resources/themes/luna-blue/theme.css';
 @import 'primeicons/primeicons.css';
 
 @import '../node_modules/primeflex/primeflex.scss';
+
+body {
+  overflow: hidden;
+}
+
+/* Scrollbar container */
+::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+}
+
+/* Scrollbar track */
+::-webkit-scrollbar-track {
+  background: #2c2c2c; /* Track color */
+  border-radius: 10px; /* Roundness of the track */
+}
+
+/* Scrollbar handle */
+::-webkit-scrollbar-thumb {
+  background: #565656; /* Handle color */
+  border-radius: 10px; /* Roundness of the handle */
+  border: 3px solid #2c2c2c; /* Creates padding effect for the handle */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #787878; /* Handle color on hover */
+}
