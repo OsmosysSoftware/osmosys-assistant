@@ -11,6 +11,8 @@ const SESSION_EXPIRATION_DAYS = 30;
 export class AuthService {
   userData = null;
 
+  token = '';
+
   apiUrl = environment.apiUrl;
 
   constructor(private http: HttpClient) {}
@@ -18,6 +20,7 @@ export class AuthService {
   isLoggedIn(): boolean {
     const userDataString = localStorage.getItem('userData');
     this.userData = userDataString ? JSON.parse(userDataString) : null;
+    this.token = localStorage.getItem('token') || '';
 
     if (!this.userData) {
       return false;
@@ -40,5 +43,9 @@ export class AuthService {
   loginUser(data: LoginRequestBody): Observable<any> {
     // Adjust the return type based on your API response
     return this.http.post(`${this.apiUrl}/auth/login`, data);
+  }
+
+  getToken(): string {
+    return this.token;
   }
 }

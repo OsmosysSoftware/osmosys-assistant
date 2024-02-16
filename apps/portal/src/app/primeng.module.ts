@@ -5,6 +5,10 @@ import { ToastModule } from 'primeng/toast';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PasswordModule } from 'primeng/password';
 import { InputTextModule } from 'primeng/inputtext';
+import { SidebarModule } from 'primeng/sidebar';
+import { MenuModule } from 'primeng/menu';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
 
 const modules = [
   ButtonModule,
@@ -12,6 +16,10 @@ const modules = [
   ReactiveFormsModule,
   PasswordModule,
   InputTextModule,
+  SidebarModule,
+  MenuModule,
+  InputTextareaModule,
+  ProgressSpinnerModule,
   BrowserAnimationsModule,
 ];
 
